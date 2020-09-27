@@ -1,0 +1,20 @@
+@startuml
+title Attaque du Monstre
+
+participant "j : ZeldiabloJeu" as jeu
+participant "Monstre : m" as monstre
+
+[->jeu : evoluer(Commande com)
+activate jeu
+    jeu -> jeu : deplacerJoueur(com)
+    jeu -> jeu : deplacerMonstresAleatoirement
+    loop getMonstres().size()
+      jeu -> monstre : getMonstres().get(i).seDeplacer(int px, int py) 
+      activate monstre
+         monstre --> jeu 
+      deactivate monstre  
+    end loop
+
+    [<--jeu
+deactivate jeu
+@enduml

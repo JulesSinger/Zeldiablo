@@ -1,0 +1,94 @@
+@startuml
+
+title Diagramme de Classe
+
+class ZeldiabloJeu implements Jeu {
++ZeldiabloJeu()
++initialiserMonstres()
++deplacerJoueur(String direction) : void
++deplacerMonstresAleatoirement() : void
++validerDeplacement(int px, int py): boolean
++getLabyrinthe() : Labyrinthe
++getJoueur() : Joueur
++getMonstres(): ArrayList<Entite>
++etreAdjacent(Entite e1, Entite e2): boolean
++attaquerLeJoueur() : void
++attaquerLesMonstres() : void
++evoluer(Commande commandeUser) : void
++etreFini() : boolean
+}
+
+abstract class Entite {
+-x : int
+-y : int
+-pointsDeVie : int
++getX() : int
++getY() : int
++setX(int nx) : void
++setY(int ny) : void
++getVie() : int
++setVie() : void
++etreMort() : boolean
++seDeplacer(int px, int py) : void
+{abstract} +attaquer(Entite e) : void
+}
+
+class Joueur implements Entite {
++Joueur(int mx, int my)
+}
+
+class Monstre implements Entite {
++Monstre(int mx, int my)
+}
+
+class Labyrinthe {
++Labyrinthe(ZeldiabloJeu jeu)
++initialiser() : void
++getCase(int x, int y) : Case
++getLargeur() : int
++getHauteur() : int
++getXMilieu() : int
++getYMilieu() : int
++ajouterMur(int px, int py) : void
++toString() : String
+}
+
+interface Case {
++etreVide() : boolean
+}
+
+class CaseVide implements Case {
++etreVide() : boolean
+}
+
+class Mur implements Case {
++etreVide() : boolean
+}
+
+class ZeldiabloDessinJeu implements DessinJeu {
+{static}+TAILLE : int
++ZeldiabloDessinJeu(ZeldiabloJeu j)
++dessiner(BufferedImage image) : void
+}
+
+interface DessinJeu {
++dessiner(BufferedImage image) : void
+}
+
+interface Jeu {
++evoluer(Commande commmandeUser) : void
++etreFini() : boolean
+}
+
+class ZeldiabloMain {
+{static} main(String[] args) : void
+}
+
+ZeldiabloJeu --> Labyrinthe : labyrinthe
+ZeldiabloJeu --> Joueur : joueur
+ZeldiabloJeu --> Monstre : monstres
+Labyrinthe --> ZeldiabloJeu : jeu
+Labyrinthe --> Case : cases
+ZeldiabloDessinJeu --> ZeldiabloJeu : jeu
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+title diagramme séquence initialiser joueur
+
+participant "jeu:Jeu" as jeu
+participant "joueur:Joueur" as joueur
+[->jeu : initialiserJeu()
+activate jeu
+    create joueur
+    jeu -> joueur : new Joueur()
+   [<-- jeu
+deactivate jeu
+@enduml

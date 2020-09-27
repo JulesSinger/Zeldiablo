@@ -1,0 +1,18 @@
+* PARTAGE DES TACHES
+
+- fonctionnalite 1: Generation de monstres immobiles (classe Entite, Monstre, Labyrinthe )
+- responsable : Hugo Fresnel
+- Fait les tests : Thomas Rzpeka
+ 
+- fonctionnalite 2: Deplacement aleatoire des monstres (methode deplacerMonstresAleatoirement)
+- responsable: Jeremy Poirel
+- Fait les tests: Jules Singer
+
+- fonctionnalite 3: Attaque des monstres (methode attaquer dans Monstre, attaquerLeJoueur dans ZeldiabloJeu et etreAdjacent dans ZeldiabloJeu)
+- responsable: Jules Singer
+- Fait les tests: Hugo Fresnel
+
+- fonctionnalite 4: Attaque du joueur (methode attaquer dans Joueur, methode attaquerLesMonstres dans ZeldiabloJeu et modification moteur pour rajouter une action keypressed sur espace (pour attaquer))
+- responsable: Thomas Rzepka
+- Fait les tests: Jeremy Poirel
+

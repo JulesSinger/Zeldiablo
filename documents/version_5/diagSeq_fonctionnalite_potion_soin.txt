@@ -1,0 +1,14 @@
+@startuml
+participant "jeu : ZeldiabloJeu" as jeu
+participant "lab : Labyrinthe" as lab
+participant "soin : PotionSoin" as soin
+participant "joueur : Joueur" as joueur
+
+lab -> soin : new PotionSoin()
+jeu -> lab : new Labyrinthe()
+jeu -> jeu : evoluer()
+ activate jeu 
+    jeu -> jeu : ramasserObjet() : true
+    jeu -> joueur : j.soigner()
+  deactivate jeu
+@enduml

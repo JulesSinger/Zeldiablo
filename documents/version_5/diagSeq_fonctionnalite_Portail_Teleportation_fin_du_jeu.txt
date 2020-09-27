@@ -1,0 +1,18 @@
+@startuml
+ZeldiabloMain -> ZeldiabloJeu : new ZeldiabloJeu()
+activate ZeldiabloJeu
+ZeldiabloJeu -> Portail : new Portail()
+
+loop
+MoteurGraphique -> ZeldiabloJeu : etreFini()
+Portail <- ZeldiabloJeu : getEtreActif()
+Portail -> ZeldiabloJeu : true
+Portail <- ZeldiabloJeu : etreSurPortail()
+Portail -> ZeldiabloJeu : true
+MoteurGraphique <- ZeldiabloJeu : true
+end loop
+
+deactivate ZeldiabloJeu
+deactivate Portail
+@enduml
+

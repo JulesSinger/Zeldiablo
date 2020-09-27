@@ -1,0 +1,68 @@
+FONCTIONNALITE : Acquisition de l'amulette
+  - Des que le joueur demande dØplacer le heros sur l'amulette, le heros se deplace et prend l'amulette.
+
+CRITERES DE VALIDATION :
+  - L'amulette n'est plus sur le plateau (et n'est plus affichee)
+  - Le Heros possede l'amulette
+  - Un monstre ne recupere pas l'amulette
+
+TESTS CORRESPONDANTS :
+  - Le joueur a recupere l'amulette
+  - Les monstres ne recuperent pas l'amulette
+
+---
+
+FONCTIONNALITE : Portail de teleportation
+
+  - le joueur demarre sur le portail, et doit s'y rendre pour termniner le niveau 
+  
+
+CRITERES DE VALIDATION :
+  - le portail de retour s'active uniquement lorsque le joueur a recupere l'amulette 
+  - Le portail non actif ne doit pas permettre de finir le niveau
+  
+TESTS CORRESPONDANTS :
+  - le portail est par defaut actif
+  - quand le joueur recupere l'amulette, il s'active
+  - quand le joueur passe dedans, le niveau se termine
+  
+---
+
+FONCTIONNALITE : Inventaire
+  - Des objets sont disposes dans des cases vides du labyrinthe, 
+  lorsque le heros appuie sur la touche d'utilisation ("c" par defaut), 
+  il recupere les objets de la case ou il se trouve et les ajoute dans son inventaire
+
+CRITERES DE VALIDATION : 
+
+  - L'inventaire est de taille 5.
+  - Lorsque le joueur cherche a prendre un objet alors qu'il n'y a rien sur la case ou il se trouve, rien ne se passe
+  - Lorsqu'un joueur prend un objet, l'objet disparait du labyrinthe (et n'est plus affiche) mais apparait dans son inventaire
+  - A chaque evolution du jeu, le jeu affiche dans la console l'inventaire du heros
+  - Les objets sont affiches dans le labyrinthe tant qu'ils sont presents.
+
+  
+TESTS CORRESPONDANTS :
+  - On peut remplir l'inventaire
+  - Le joueur peut seulement recuperer les objets presents sur la case sur laquelle ils sont
+  - Les objets ne doivent pas disparaitre
+
+
+---
+FONCTIONNALITE : Case avec potion de soin
+  - Des potions de soin sont disposes sur quelques des cases vides du labyrinthe, 
+  lorsque le heros passe sur la case, alors il peut recuperer la potion et l'utiliser quand elle est dans son inventaire
+  
+CRITERES DE VALIDATION :
+  - La potion est recuperee commme un objet dans l'inventaire
+  - Lorsque le joueur utilise la potion, il gagne de la vie
+  - Lorsque le joueur prend la potion dans son inventaire, elle disparait
+
+TESTS CORRESPONDANTS :
+  - la potion est recuperee commme un objet dans l'inventaire
+  - recuperation de la vie apres utilisation de la potion
+  - le joueur n'est pas soigne s'il ne possede pas de potion
+  - les points de vie recuperes ne doivent exceder le maximum de points de vie
+  
+  
+  

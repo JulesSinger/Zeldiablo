@@ -1,0 +1,208 @@
+@startuml
+title Diagramme de Classe
+
+class ZeldiabloJeu implements Jeu {
++ZeldiabloJeu()
++initialiserMonstres() : void
++initialiserObjets() : void
++initialiserPortails() : void
++activerLesPieges(): void
+
++etrePiege(int x, int y) : boolean
++perdreViePiege() : void
+
++getLabyrinthe() : Labyrinthe
++getJoueur() : Joueur
++etreSurPortail() : boolean
++getEntites(): ArrayList<Entite>
++getObjets() : ArrayList<Objet>
+
++etreAdjacent(Entite e1, Entite e2): boolean
++attaquerLeJoueur() : void
++attaquerLesMonstres() : void
+
++deplacerJoueur(String direction) : void
++deplacerMonstresAleatoirement() : void
++validerDeplacement(int px, int py): boolean
+
++ramasserObjet() : boolean
++utiliserObjet(int numero) : void
++afficherInventaire() : void
+
++evoluer(Commande commandeUser) : void
++etreFini() : boolean
+}
+
+abstract class Entite {
+-x : int
+-y : int
+-estPermeable : boolean
+-lastX : int
+-lastY : int
+-pointsDeVie : int
++getX() : int
++getY() : int
++setX(int nx) : void
++setY(int ny) : void
+
++getLastX() : int
++getLastY() : int
++setLastX(int x) : void
++setLastY(int y) : void
+
++getVie() : int
++setVie() : void
++etreMort() : boolean
++seDeplacer(int px, int py) : void
++etrePermeable() : boolean
++setPermeabilite() :  void
+{abstract} +attaquer(Entite e) : void
+}
+
+class Joueur implements Entite {
++Joueur(int mx, int my)
+
++attaquer(Entite e) : void
++soigner() : void
++getInventaire() : Inventaire
+}
+
+class Monstre implements Entite {
++Monstre(int mx, int my)
++attaquer(Entite e) : void
+}
+
+class Inventaire {
+-capacite : final int
+-nbObjetRamasse : int
++Inventaire()
++ajouterObjet(Objet o) : void
++supprimerObjet(int index) : void
++getObjetsJoueur() : ArrayList<Objet>
++getCapacite() : int
++getNbObjetRamasse() : int
++etreRamasseAmulette() : boolean
++toString() : String
+}
+
+class Fantome extends Monstre {
++Fantome(int mx, int my)
+}
+
+class Labyrinthe {
++Labyrinthe(ZeldiabloJeu jeu)
++initialiser() : void
++getCase(int x, int y) : Case
++getLargeur() : int
++getHauteur() : int
++getXMilieu() : int
++getYMilieu() : int
++ajouterMur(int px, int py) : void
++ajouterPiege(int px, int py): void
++getPortail() : Case
++toString() : String
+}
+
+interface Case {
++etreVide() : boolean
++etreActif(boolean b): void
++getEtreActif(): boolean
+}
+
+class CaseVide implements Case {
++etreVide() : boolean
++etreActif(boolean b): void
++getEtreActif(): boolean
+}
+
+class CaseMur implements Case {
++etreVide() : boolean
++etreActif(boolean b): void
++getEtreActif(): boolean
+}
+
+class CasePiege implements Case {
+-estActif: boolean
++CasePiege()
++etreVide() : boolean
++etreActif(boolean b): void
++getEtreActif(): boolean
+
+}
+
+class CasePortail implements Case {
+-estActif : boolean
+
++etreVide() : boolean
++etreActif(boolean b) : void 
++getEtreAffectif() : boolean
+}
+
+abstract class Objet {
+-x : int
+-y : int
+-estRamasse : boolean
+-estUtilise : boolean
+-nom : String
+
++Objet(String n, int x, int y)
++Objet(boolean b, String n, int x, int y)
+
++getX() : int
++getY() : int
++setX(int nx) : void
++setY(int ny) : void
+
++getLastX() : int
++getLastY() : int
++setLastX(int x) : void
++setLastY(int y) : void
+
++etreRamasse() : boolean
++setEstRamasse(boolean b) : void
++etreUtilise() : boolean
++setEstUtilise(boolean b) : void
++getNom() : String
++setNom(String n) : void
+}
+
+class Amulette extends Objet {
++Amulette(String n, int x, int y)
+}
+
+class PotionSoin extends Objet {
++PotionSoin(String n, int x, int y)
++PotionSoin(boolean b, String n, int x, int y)
+}
+
+class ZeldiabloDessinJeu implements DessinJeu {
+{static}+TAILLE : int
++ZeldiabloDessinJeu(ZeldiabloJeu j)
++dessiner(BufferedImage image) : void
+-dessinerJeu(Graphics2D g): void
+-dessinerPerdu(Graphics2D g): void
+-dessinerGagne(Graphics2D g): void
+}
+
+interface DessinJeu {
++dessiner(BufferedImage image) : void
+}
+
+interface Jeu {
++evoluer(Commande commmandeUser) : void
++etreFini() : boolean
+}
+
+class ZeldiabloMain {
+{static} main(String[] args) : void
+}
+
+Joueur --> Inventaire : inventaire
+Inventaire --> Objet : objetsJoueur
+ZeldiabloJeu --> Labyrinthe : labyrinthe
+ZeldiabloJeu --> Entite : entites
+ZeldiabloJeu --> Objet : objets
+Labyrinthe --> ZeldiabloJeu : jeu
+Labyrinthe --> Case : cases
+ZeldiabloDessinJeu --> ZeldiabloJeu : jeu
+@enduml

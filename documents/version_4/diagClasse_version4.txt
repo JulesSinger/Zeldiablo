@@ -1,0 +1,124 @@
+@startuml
+
+title Diagramme de Classe
+
+class ZeldiabloJeu implements Jeu {
++ZeldiabloJeu()
++initialiserMonstres() : void
++activerLesPieges(): void
+
++etrePiege(int x, int y) : boolean
++perdreViePiege() : void
+
++getLabyrinthe() : Labyrinthe
++getJoueur() : Joueur
++getEntites(): ArrayList<Entite>
+
++etreAdjacent(Entite e1, Entite e2): boolean
++attaquerLeJoueur() : void
++attaquerLesMonstres() : void
+
++deplacerJoueur(String direction) : void
++deplacerMonstresAleatoirement() : void
++validerDeplacement(int px, int py): boolean
++evoluer(Commande commandeUser) : void
++etreFini() : boolean
+}
+
+abstract class Entite {
+-x : int
+-y : int
+-estPermeable : boolean
+-lastX : int
+-lastY : int
+-pointsDeVie : int
++getX() : int
++getY() : int
++setX(int nx) : void
++setY(int ny) : void
+
++getLastX() : int
++getLastY() : int
++setLastX(int x) : void
++setLastY(int y) : void
+
++getVie() : int
++setVie() : void
++etreMort() : boolean
++seDeplacer(int px, int py) : void
++etrePermeable() : boolean
++setPermeabilite() :  void
+{abstract} +attaquer(Entite e) : void
+}
+
+class Joueur implements Entite {
++Joueur(int mx, int my)
+}
+
+class Monstre implements Entite {
++Monstre(int mx, int my)
+}
+
+class Fantome extends Monstre {
++Fantome(int mx, int my)
+}
+
+class Labyrinthe {
++Labyrinthe(ZeldiabloJeu jeu)
++initialiser() : void
++getCase(int x, int y) : Case
++getLargeur() : int
++getHauteur() : int
++getXMilieu() : int
++getYMilieu() : int
++ajouterMur(int px, int py) : void
++ajouterPiege(int px, int py): void
++toString() : String
+}
+
+interface Case {
++etreVide() : boolean
++etreActif(boolean b): void
++getEtreActif(): boolean
+}
+
+class CaseVide implements Case {
+}
+
+class Mur implements Case {
+}
+
+class CasePiege implements Case {
+-estActif: boolean
++CasePiege()
+}
+
+class ZeldiabloDessinJeu implements DessinJeu {
+{static}+TAILLE : int
++ZeldiabloDessinJeu(ZeldiabloJeu j)
++dessiner(BufferedImage image) : void
+-dessinerJeu(Graphics2D g): void
+-dessinerPerdu(Graphics2D g): void
+-dessinerGagne(Graphics2D g): void
+}
+
+interface DessinJeu {
++dessiner(BufferedImage image) : void
+}
+
+interface Jeu {
++evoluer(Commande commmandeUser) : void
++etreFini() : boolean
+}
+
+class ZeldiabloMain {
+{static} main(String[] args) : void
+}
+
+ZeldiabloJeu --> Labyrinthe : labyrinthe
+ZeldiabloJeu --> Entite : entites
+Labyrinthe --> ZeldiabloJeu : jeu
+Labyrinthe --> Case : cases
+ZeldiabloDessinJeu --> ZeldiabloJeu : jeu
+
+@enduml

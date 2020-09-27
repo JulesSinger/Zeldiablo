@@ -1,0 +1,26 @@
+FONCTIONNALITE : Attaque avec une epee 
+    - le joueur peut attaquer plusieurs monstres en un coup au corps a corps
+
+CRITERES DE VALIDATION :
+  - le joueur possede une eppee
+  - il peut attaquer plusieurs monstres avec
+  - il ne peut pas attaquer a distance
+
+TESTS CORRESPONDANTS :
+  - le joueur possede une arme
+  - le monstre perd de la vie quand il est attaque par l'eppee
+  - plusieurs monstre ont perdu des pv en meme temps s'ils sont a cote
+---
+
+FONCTIONNALITE : Attaque avec un arc
+
+  - le joueur attaque une seule cible a distance (3 blocs)
+
+CRITERES DE VALIDATION :
+  - le joueur possede un arc
+  - il peut attaquer a distance
+  
+TESTS CORRESPONDANTS :
+  - le monstre perd des pv a distance
+  - un seul monstre perd de la vie a la fois
+  

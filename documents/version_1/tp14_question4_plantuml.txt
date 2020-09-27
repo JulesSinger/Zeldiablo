@@ -1,0 +1,27 @@
+@startuml
+
+title TP14 Question 4
+
+class Labyrinthe {
+}
+
+class Aventurier {
+}
+
+interface Case {
+}
+
+class CaseVide implements Case {
+}
+
+class Mur implements Case {
+}
+
+class Jeu {
+}
+
+Jeu --> Labyrinthe : labyrinthe
+Labyrinthe --> Aventurier : aventurier
+Labyrinthe --> Case : cases
+
+@enduml

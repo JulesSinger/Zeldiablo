@@ -1,0 +1,11 @@
+* PARTAGE DES TACHES
+
+Fonctionnalite 1 : Potion de force
+Classes affectees : nouvelle classe PotionForce, nouvelle classe Potion, suppression soigner() dans Joueur, modification ZeldiabloJeu
+Responsable : Hugo Fresnel
+Fait les tests : Jeremy Poirel
+
+Fonctionnalite 2 : Nouveau monstre Gobelin
+Classes affectees : nouvelle classe Gobelin
+Responsable : Jules Singer
+Fait les tests : Thomas Rzepka

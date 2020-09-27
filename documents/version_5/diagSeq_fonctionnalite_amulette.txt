@@ -1,0 +1,13 @@
+@startuml
+
+activate ZeldiabloJeu
+ZeldiabloJeu -> Labyrinthe : new Labyrinthe()
+activate Labyrinthe
+Labyrinthe -> Amulette : new Amulette(n, x, y)
+activate Amulette
+loop
+ZeldiabloJeu -> ZeldiabloJeu : evoluer()
+end loop
+ZeldiabloJeu -> ZeldiabloJeu : ramasserObjet() : true
+
+@enduml

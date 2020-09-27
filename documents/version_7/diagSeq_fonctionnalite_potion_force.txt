@@ -1,0 +1,27 @@
+@startuml
+
+activate ZeldiabloJeu 
+
+ZeldiabloJeu -> Labyrinthe  : new Labyrinthe()
+activate Labyrinthe
+
+ZeldiabloJeu -> Joueur : new Joueur()
+activate Joueur
+
+ZeldiabloJeu -> ZeldiabloJeu : initialiserObjets()
+
+ZeldiabloJeu -> PotionForce : new PotionForce()
+activate PotionForce 
+
+ZeldiabloJeu -> ZeldiabloJeu : evoluer()
+
+ZeldiabloJeu -> ZeldiabloJeu  : ramasserObjet() : true
+
+ZeldiabloJeu -> ZeldiabloJeu : utiliserObjet(...)
+ZeldiabloJeu -> PotionForce : utiliser(joueur)
+deactivate ZeldiabloJeu
+deactivate Labyrinthe
+deactivate PotionForce
+deactivate Joueur
+
+@enduml

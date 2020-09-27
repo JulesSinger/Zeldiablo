@@ -1,0 +1,12 @@
+@startuml
+participant "j : ZeldiabloJeu" as jeu
+participant "g : Gobelin" as gobelin
+
+-> jeu : new ZeldiabloJeu()
+activate jeu
+jeu -> jeu : initialiserMonstres()
+loop
+jeu -> gobelin : new Gobelin(x, y, puissance)
+end loop
+deactivate jeu
+@enduml

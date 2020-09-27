@@ -1,0 +1,64 @@
+FONCTIONNALITE : Collision des entites
+  - Lorsque qu'une entite essaye de se deplacer vers une autre, elle ne se deplace pas.
+
+CRITERES DE VALIDATION :
+  - La collision fonctionne dans les 4 directions.
+  - la collision fonctionne pour toutes les entites
+  - Si la case est vide, le personnage avance.
+
+TESTS CORRESPONDANTS :
+  - les monstres ne peuvent pas se deplacer sur le joueur
+  - le joueur ne peut pas se deplacer sur les monstres
+  (test realise par le biais de la methode validerDeplacement fonctionnelle)
+
+---
+
+FONCTIONNALITE : Gestion de la fin du jeu 
+
+  - le jeu peut se finir par une victoire ou une defaite du joueur
+
+CRITERES DE VALIDATION :
+  - les monstres doivent disparaitre lorsqu'ils sont mort.
+  - Quand tous les monstres sont morts, le joueur a gagne
+  - Le joueur a perdu lorsqu'il est mort
+  
+TESTS CORRESPONDANTS :
+  - les points des entites baissent
+  - quand le joueur est a 0 pt de vie le jeu est fini.
+  - quand tous les monstres sont elimines le jeu est fini.
+  
+---
+
+FONCTIONNALITE : Cases piegees
+  - Lorsque le joueur arrive sur une case piegee, il subit des degats.
+
+CRITERES DE VALIDATION : 
+
+ 	- Les degats ne se declenchent que lorsque le joueur arrive sur la case, il peut ensuite
+	  rester sur cette case aussi longtemps qu'il le souhaite sans subir d'autres degats.
+ 	- Lorsque la case devient a nouveau vide, le piege se reamorce.
+  
+TESTS CORRESPONDANTS :
+  - Le joueur perd 1 point de vie s'il marche sur le piege.
+  - Le piege est toujours actif apres que le joueur soit passe dessus
+
+
+---
+FONCTIONNALITE : Fantomes
+  - Le labyrinthe dispose d'un nouveau type de monstre : les fantomes.
+
+CRITERES DE VALIDATION :
+  - Les fantomes peuvent traverser des murs mais pas les autres personnages (les
+	autres monstres ou le heros).
+  - Les autres monstres continuent a etre bloques par des murs.
+  - Les attaques des fantomes fonctionnent de la meme maniere que les attaques des
+    monstres de base.
+
+TESTS CORRESPONDANTS :
+  - presence de fantomes dans le jeu
+  - le joueur peut attaquer un fantome
+  - un fantome peut attaquer un joueur
+  - la collision avec les murs n'est pas testable (car deplacement aleatoire)
+  
+  
+  

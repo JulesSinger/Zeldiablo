@@ -1,0 +1,25 @@
+* PARTAGE DES TACHES
+
+- Fonctionnalite 1: Fin du jeu : mort du heros / Fin du jeu : victoire du heros
+- Classes affectees: ZeldiabloJeu, ZeldiabloDessinJeu, MoteurGraphique
+- Responsable : Hugo Fresnel
+- Fait les tests : Thomas Rzpeka
+ 
+- Fonctionnalite 2: Collision entre entitees : collision entre 2 entitees non "permeable" / Pas de collision quand monstre mort
+- Classes affectees: Entite, Labyrinthe, ZeldiabloJeu
+- Responsable: Jeremy Poirel
+- Fait les tests: Jules Singer
+
+- Fonctionnalite 3: Case piegees
+- Classes et methodes affectees : ajout de la derniere position des entites (lastx, lasty), ajout de la classe CasePiege, et methode activerPiege creer.
+- Responsable: Jules Singer
+- Fait les tests: Jeremy Poirel
+
+- Fonctionnalite 4: Fantomes
+- Classes affectees: Fantome et classe ZeldiabloJeu
+- Responsable: Thomas Rzepka
+- Fait les tests: Hugo Fresnel
+
+
+
+

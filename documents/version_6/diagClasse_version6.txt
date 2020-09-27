@@ -1,0 +1,216 @@
+@startuml
+title Diagramme de Classe
+
+class ZeldiabloJeu implements Jeu {
++ZeldiabloJeu()
++initialiserMonstres() : void
++initialiserObjets() : void
++activerLesPieges(): void
+
++etrePiege(int x, int y) : boolean
++perdreViePiege() : void
+
++getLabyrinthe() : Labyrinthe
++getJoueur() : Joueur
++etreSurPortail() : boolean
++getEntites(): ArrayList<Entite>
++getObjets() : ArrayList<Objet>
+
++etreAdjacent(Entite e1, Entite e2): boolean
++attaquerLeJoueur() : void
++attaquerLesMonstres() : void
+
++rencontrerMurDroite(int nbCases) : boolean
++rencontrerMurDroite(int nbCases) : boolean
++rencontrerMurBas(int nbCases) : boolean
++rencontrerMurHaut(int nbCases) : boolean
+
++etreAProximite(Entite e1, Entite e2) : boolean
++attaquerLesMonstres(Arme armeSelectionnee)
++chercherArmeSelectionnee() : Arme
+
++deplacerJoueur(String direction) : void
++deplacerMonstresAleatoirement() : void
++validerDeplacement(int px, int py): boolean
+
++ramasserObjet() : boolean
++utiliserObjet(int numero) : void
++afficherInventaire() : void
+
++evoluer(Commande commandeUser) : void
++etreFini() : boolean
+
+-chercherCaseVide() : int[]
+}
+
+abstract class Entite {
+-x : int
+-y : int
+-estPermeable : boolean
+-lastX : int
+-lastY : int
+-pointsDeVie : int
++getX() : int
++getY() : int
++setX(int nx) : void
++setY(int ny) : void
+
++getLastX() : int
++getLastY() : int
++setLastX(int x) : void
++setLastY(int y) : void
+
++getVie() : int
++setVie(int v) : void
++etreMort() : boolean
++seDeplacer(int px, int py) : void
++etrePermeable() : boolean
++setPermeabilite() :  void
+{abstract} +attaquer(Entite e) : void
+}
+
+class Joueur extends Entite {
++Joueur(int mx, int my)
++attaquer(Entite e, Arme armeSelect) : void
++attaquer() : void
++soigner() : void
++getInventaire() : Inventaire
+}
+
+class Monstre extends Entite {
++Monstre(int mx, int my)
++attaquer(Entite e) : void
+}
+
+class Fantome extends Monstre {
++Fantome(int mx, int my)
+}
+
+class Inventaire {
+-{static}CAPACITE : final int
++Inventaire()
++ajouterObjet(Objet o) : void
++supprimerObjet(int index) : void
++getObjets() : ArrayList<Objet>
++etreRamasseAmulette() : boolean
++toString() : String
+}
+
+class Labyrinthe {
++Labyrinthe(ZeldiabloJeu jeu)
++initialiser() : void
++getCase(int x, int y) : Case
++getLargeur() : int
++getHauteur() : int
++getXMilieu() : int
++getYMilieu() : int
++ajouterMur(int px, int py) : void
++ajouterPiege(int px, int py): void
++getPortail() : CasePortail
++toString() : String
+}
+
+interface Case {
++etreVide() : boolean
+}
+
+abstract class CaseActivable implements Case {
+-estActif : boolean
++{abstract} etreVide() : boolean
++etreActif(boolean) : void
++getEtreActif(): boolean
+}
+
+class CaseVide implements Case {
++etreVide() : boolean
+}
+
+class CaseMur implements Case {
++etreVide() : boolean
+}
+
+class CasePiege extends CaseActivable {
++CasePiege()
++etreVide() : boolean
+}
+
+class CasePortail extends CaseActivable {
++CasePortail()
++etreVide() : boolean
+}
+
+abstract class Objet {
+-x : int
+-y : int
+-estUtilise : boolean
+-nom : String
+
++Objet(String n)
++Objet(String n, int x, int y)
+
++getX() : int
++getY() : int
++setX(int x) : void
++setY(int y) : void
+
++etreUtilise() : boolean
++setEstUtilise(boolean b) : void
++getNom() : String
+}
+
+class Amulette extends Objet {
++Amulette(String n, int x, int y)
+}
+
+abstract class Arme extends Objet {
+-puissance : int
+-estEquipee : boolean
++Arme(String n, int pui)
++getPuissance() : int
++etreEquipee() : boolean
++equiperArme(boolean b) : void
+}
+
+class Arc extends Arme {
++Arc(String n, int pui)
+}
+
+class Epee extends Arme {
++Epee(String n, int pui)
+}
+
+class PotionSoin extends Objet {
++PotionSoin(String n, int x, int y)
+}
+
+class ZeldiabloDessinJeu implements DessinJeu {
++{static}TAILLE : int
++ZeldiabloDessinJeu(ZeldiabloJeu j)
++dessiner(BufferedImage image) : void
+-dessinerJeu(Graphics2D g): void
+-dessinerPerdu(Graphics2D g): void
+-dessinerGagne(Graphics2D g): void
+}
+
+interface DessinJeu {
++dessiner(BufferedImage image) : void
+}
+
+interface Jeu {
++evoluer(Commande commmandeUser) : void
++etreFini() : boolean
+}
+
+class ZeldiabloMain {
+{static} main(String[] args) : void
+}
+
+Joueur --> Inventaire : inventaire
+Inventaire --> Objet : objets
+ZeldiabloJeu --> Labyrinthe : labyrinthe
+ZeldiabloJeu --> Entite : entites
+ZeldiabloJeu --> Objet : objets
+Labyrinthe --> ZeldiabloJeu : jeu
+Labyrinthe --> Case : cases
+ZeldiabloDessinJeu --> ZeldiabloJeu : jeu
+@enduml

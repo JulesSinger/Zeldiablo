@@ -1,0 +1,9 @@
+@startuml
+-> ZeldiabloJeu : new ZeldiabloJeu()
+activate ZeldiabloJeu
+ZeldiabloJeu -> ZeldiabloJeu : initialiserMonstres()
+loop
+ZeldiabloJeu -> Monstre : new Monstre(x, y)
+end loop
+deactivate ZeldiabloJeu
+@enduml

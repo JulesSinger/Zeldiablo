@@ -1,0 +1,56 @@
+FONCTIONNALITE : Creation d'un labyrinthe par defaut
+  - Initialisation du labyrinthe
+  - Affichage en console
+
+CRITERES DE VALIDATION :
+  - Le labyrinthe s'affiche correctement dans la console
+  - Cases vides et de murs
+  - Respect des dimensions du labyrinthe
+
+
+TESTS CORRESPONDANTS :
+  - Bon format pour l'affichage
+  - Initialisation des attributs (cases)
+  - Respect des dimensions donnees (carre)
+  - La case du milieu est vide
+
+
+---
+FONCTIONNALITE : Initialiser un joueur
+  - Le jeu construit un joueur
+
+CRITERES DE VALIDATION :
+  - Initialisation des coordonnees
+  - Affichage au centre du labyrinthe
+
+TESTS CORRESPONDANTS :
+  - Valeurs initiales du joueur
+  - Le joueur est bien au centre du labyrinthe
+  - Le joueur est bien sur une case vide
+
+
+---
+FONCTIONNALITE : Le joueur peut se deplacer
+  - Commandes pour deplacer le joueur (commandes console)
+  - Modification des coordonnees
+
+CRITERES DE VALIDATION :
+  - Le joueur repond aux commandes (up, right, down, left)
+  - Le joueur change de coordonnees
+  - Affichage du joueur aux nouvelles coordonnees
+
+TESTS CORRESPONDANTS :
+  - Reactions aux commandes
+  - Les coordonnees ont bien ete modifies apres une commande
+  - Nouvel affichage
+
+
+---
+FONCTIONNALITE : Collision avec les murs
+  - Empêcher un joueur de se deplacer sur un mur
+
+CRITERES DE VALIDATION :
+  - Quand le joueur ne peut pas se deplacer sur un mur
+
+TESTS CORRESPONDANTS :
+  - Verifier que les coordonnees ne changent pas lorsqu'il se deplace sur un mur

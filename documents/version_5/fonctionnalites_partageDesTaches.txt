@@ -1,0 +1,21 @@
+* PARTAGE DES TACHES
+
+- Fonctionnalite 1: Inventaire.
+- Classes affectees: Classe Inventaire, ajout attribut dans joueur, et ajout des touches 'c, 1, 2, 3, 4, 5' pour ramasser et utiliser les objets
+- Responsable : Jules Singer
+- Fait les tests : Jeremy Poirel
+ 
+- Fonctionnalite 2: Objets + amulette
+- Classes affectees: Classe Objet, initialiserObjets()  dans zeldiabloJeu, et classe Amulette 
+- Responsable: Hugo Fresnel 
+- Fait les tests: Jules Singer
+
+- Fonctionnalite 3: Potion de soin.
+- Classes et methodes affectees : Classe Soin + soigner() dans joueur + ramasserObjet() dans ZeldiabloJeu
+- Responsable: Thomas Rzepka
+- Fait les tests: Hugo Fresnel
+
+- Fonctionnalite 4: Portail de teleportation + modification de la fin du jeu
+- Classes affectees: Classe Portail + utiliserObjet dans ZeldiabloJeu
+- Responsable: Jeremy Poirel
+- Fait les tests: Thomas Rzepka

@@ -1,0 +1,14 @@
+@startuml
+participant "jeu : ZeldiabloJeu" as jeu
+participant "lab : Labyrinthe" as lab
+participant "piege : CasePiege" as piege
+participant "joueur : Joueur" as joueur
+
+lab -> piege : new CasePiege()
+jeu -> lab : new Labyrinthe()
+jeu -> jeu : evoluer()
+ activate jeu 
+    jeu -> jeu : etrePiege(Joueur j, case Case) : true
+    jeu -> joueur : j.setVie(j.getVie()-1)
+  deactivate jeu
+@enduml

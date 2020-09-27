@@ -1,0 +1,14 @@
+@startuml
+participant "ZeldiabloJeu : jeu" as jeu
+participant "Joueur : joueur" as joueur
+participant "Inventaire : inv" as inv
+participant "Epee : arc" as epee
+participant "Monstre : monstre" as monstre
+[--> jeu : new ZeldiabloJeu()
+jeu--> inv : new Inventaire()
+jeu -> jeu : evoluer()
+activate jeu
+jeu -> jeu : attaquerLesMonstres(epee)
+jeu -> joueur : attaquer(monstre, epee)
+deactivate jeu
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+title Collision avec les monstres
+
+participant "j : Jeu" as jeu
+participant "Entite : Entite" as entite
+participant "Entite : Entite" as entite2
+
+[->jeu : deplacerJoueur(direction)
+activate jeu
+    jeu -> entite : seDeplacer(direction)
+    activate entite 
+    entite -> entite : validerDeplacement(int px, int py, Entite e)
+    loop getMonstres().size()
+      entite -> entite2 : compare la future position de l'entite1 a la position de l'entite2 et vérifie la permeabilité des entités
+      activate entite2
+      entite2 --> entite : boolean
+      deactivate entite2
+    end loop
+    jeu<-- entite
+    deactivate entite
+    [<--jeu
+deactivate jeu
+@enduml

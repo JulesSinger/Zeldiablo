@@ -1,0 +1,16 @@
+@startuml
+title Collision avec les murs
+
+participant "j : Jeu" as jeu
+participant "joueur : Joueur" as joueur
+
+[->jeu : deplacerJoueur(direction)
+activate jeu
+    jeu -> joueur : seDeplacer(direction)
+    activate joueur 
+    joueur -> joueur : validerDeplacement()
+    jeu<-- joueur
+    deactivate joueur
+    [<--jeu
+deactivate jeu
+@enduml

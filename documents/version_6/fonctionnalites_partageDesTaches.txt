@@ -1,0 +1,18 @@
+* PARTAGE DES TACHES
+
+- Fonctionnalite 1: Attaque avec une epee
+- Classes affectees: Classe Eppee, Arme
+- Responsable : Thomas Rzepka, Jeremy Poirel
+- Fait les tests : Jules Singer
+
+- Fonctionnalite 2: Attaque avec un arc
+- Classes et methodes affectees : classe arc, ZeldiabloJeu
+- Responsable: Jules Singer
+- Fait les tests: Thomas Rzepka, Jeremy Poirel
+
+- Tache secondaire : 
+	. Refactoring : amelioration de l'organisation des fichiers de classes, test et images
+	. Optimisation du codes des methodes, nettoyage des methodes inutiles
+	. Verification complete de la javadoc
+- Classes et methodes affectees : quasiment toutes
+- Responsable: Hugo Fresnel

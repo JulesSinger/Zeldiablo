@@ -1,0 +1,27 @@
+@startuml
+
+ZeldiabloMain -> ZeldiabloJeu : new ZeldiabloJeu()
+activate ZeldiabloJeu
+ZeldiabloMain -> ZeldiabloDessinJeu : new ZeldiabloDessinJeu()
+activate ZeldiabloDessinJeu
+ZeldiabloMain -> MoteurGraphique : new MoteurGraphique(jeu, dessinJeu)
+activate MoteurGraphique
+
+ZeldiabloMain -> MoteurGraphique : lancerJeu(width, height)
+MoteurGraphique -> InterfaceGraphique : new InterfaceGraphique(dessinJeu, width, height)
+activate InterfaceGraphique
+
+loop
+MoteurGraphique -> ZeldiabloJeu : etreFini()
+MoteurGraphique <- ZeldiabloJeu : true
+end loop
+
+MoteurGraphique -> InterfaceGraphique : dessiner()
+ZeldiabloDessinJeu <- InterfaceGraphique : dessinerJeu()
+
+deactivate InterfaceGraphique
+deactivate ZeldiabloDessinJeu
+deactivate MoteurGraphique
+deactivate ZeldiabloJeu
+
+@enduml

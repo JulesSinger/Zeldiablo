@@ -1,0 +1,68 @@
+FONCTIONNALITE : Generation de monstres immobiles
+  - Initialisation des monstres au lancement du jeu
+  - Les monstres ne bougent pas
+
+CRITERES DE VALIDATION :
+  - Les monstres sont places aleatoirement dans le labyrinthe
+  - Monstre present sur le jeu 
+  - Affichage correcte des monstres
+  
+TESTS CORRESPONDANTS :
+  - Valeurs initiales des monstres
+  - Le monstre est bien sur une case vide 
+  - Le monstre ne se genere pas sur une case non-vide (mur / joueur...)
+
+---
+
+FONCTIONNALITE : Deplacement aleatoire des monstres
+
+  - A chaque evolution le monstre se deplace aleatoirement
+
+CRITERES DE VALIDATION :
+  - A chaque evolution du jeu, que le joueur se deplace ou non, les monstres se deplacent.
+  - Les monstres sont bloques par les obstacles. S'ils ont choisi de se diriger vers un
+	obstacle (mur, joueur, ...), leur mouvement est alors annule.
+  - A chaque evolution, tous les monstres tentent de se deplacer.
+  - L'interface graphique se met a jour en fonction des deplacements des Monstres.
+  
+TESTS CORRESPONDANTS :
+  - Valeurs initiales des monstres
+  - Le monstre est bien sur une case vide
+  - Le monstre ne se genere pas sur une case non-vide
+  - Le monstre se deplace aleatoirement a chaque evolution du jeu. (verification du positionnement).
+
+---
+
+FONCTIONNALITE : Attaque des monstres
+  - Lorsqu'un monstre doit agir, si le monstre se trouve a cote du heros, alors il ne se
+deplace pas mais il attaque celui-ci.
+
+CRITERES DE VALIDATION :
+  - Lorsque le monstre est a cote du joueur, il attaque et ne se deplace pas. Par defaut,
+	le Heros perd 1 point de vie.
+  - Lorsque le monstre est loin du joueur, il n'attaque pas mais se deplace.
+  
+TESTS CORRESPONDANTS :
+  - Le joueur perd 1 point de vie si le monstre l'attaque.
+
+
+---
+FONCTIONNALITE : Attaque du joueur
+  - Lorsque le joueur appuie sur une touche donnee (par defaut la touche espace), il
+	effectue une attaque contre les monstres qui se trouvent a cote de lui (les cases adjacentes).
+
+CRITERES DE VALIDATION :
+  - L'attaque a effectivement lieu quand le joueur appuie sur la touche.
+  - TOUS les monstres a cote du joueur prennent un point de degat.
+  - TOUS les monstres eloignes du joueur ne subissent pas de degats.
+  -	S'il n'y a aucun monstre autour du joueur, l'attaque a quand meme lieu et empeche
+	le deplacement du joueur, mais les monstres ne prennent pas de degats.
+
+TESTS CORRESPONDANTS :
+  - les monstres perdent de la vie s'ils sont a cote du joueur.
+  - les monstres meurt s'ils sont attaques.
+  - les monstres ne perdent pas de vie s'ils ne sont pas a cote du joueur
+  - si le joueur n'est a proximite d'un monstre mais qu'il attaque, il ne se deplace pas et ne fait pas de degat.
+  - le joueur n'attaque pas s'il se deplace.
+ 
+

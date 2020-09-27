@@ -1,0 +1,39 @@
+* fonctionnalités
+
+- fonctionnalité 1: Creation d'un labyrinthe par defaut
+- responsable: Fresnel Hugo
+- diag de sequence: diagSeq_fonctionnalite_LabyrintheParDefaut.png
+ 
+- fonctionnalité 2: Initialiser un joueur
+- responsable: Poirel Jérémy 
+- diag de sequence: diagSeq_fonctionnalite_InitialiserJoueur.png
+
+- fonctionnalité 3: Le joueur peut se deplacer
+- responsable: Singer Jules
+- diag de sequence: diagSeq_fonctionnalite_deplacerJoueur.png
+
+- fonctionnalité 4: Collision avec les murs
+- responsable: Rzepka Thomas
+- diag de sequence: diagSeq_fonctionnalite_collision_avec_les_murs.png
+
+* réalisation
+
+- fonctionnalité 1
+- responsable: Fresnel Hugo
+- fonctionnalité 1 tests
+- responsable: Singer Jules
+
+- fonctionnalité 2
+- responsable: Poirel Jérémy
+- fonctionnalité 2 tests
+- responsable: Fresnel Hugo
+
+- fonctionnalité 3
+- responsable: Singer Jules
+- fonctionnalité 3 tests
+- responsable: Rzepka Thomas
+
+- fonctionnalité 4
+- responsable: Rzepka Thomas
+- fonctionnalité 4 tests
+- responsable: Poirel Jérémy

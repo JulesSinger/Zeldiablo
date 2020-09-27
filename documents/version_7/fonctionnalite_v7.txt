@@ -1,0 +1,27 @@
+FONCTIONNALITE : Potion de force
+    - le joueur peut recuperer une potion de force qui augmente sa puissance
+
+CRITERES DE VALIDATION :
+  - la potion de force est generee sur le jeu
+  - le joueur peut la ramasser et l'utiliser
+  - la potion double la puissance du joueur
+
+TESTS CORRESPONDANTS :
+  - le joueur possede une potion de force
+  - la puissance des armes du joueur est augmentee lorsqu'il prend la potion
+  
+---
+
+FONCTIONNALITE : Nouveau monstre : Gobelin
+
+  - le gobelin est un monstre qui a une puissance d'attaque superieur aux autres 
+
+CRITERES DE VALIDATION :
+  - le gobelin apparait sur le jeu
+  - le gobelin inflige deux points de vie
+  
+TESTS CORRESPONDANTS :
+  - le joueur perd deux points de vie
+  - le joueur peut attaquer un gobelin
+
+  

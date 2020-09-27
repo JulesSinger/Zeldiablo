@@ -1,0 +1,7 @@
+@startuml
+Jeu -> Labyrinthe : new Labyrinthe()
+activate Labyrinthe
+Labyrinthe -> Labyrinthe : initialiser()
+Jeu <-- Labyrinthe
+deactivate Labyrinthe
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+participant "joueur : Joueur" as joueur
+participant "inv : Inventaire" as inv
+participant "soin : Soin" as soin
+
+joueur -> inv : new Inventaire()
+
+note right : estRamasse : false
+note left : nbObjetsRamasses : 0 
+inv -> inv : ajouterObjet(soin)
+
+note right : estRamasse : true
+note left :  nbObjetsRamasses : 1
+inv->inv : supprimerObjet(soin)
+note left : nbObjetsRamasses : 0
+@enduml
